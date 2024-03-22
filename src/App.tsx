@@ -68,7 +68,7 @@ function App() {
             color="rgb(0,192,255)"
           />
         </S.Tray> */}
-        <SideBar />
+        <SideBar diagramEngine={diagramEngine} updateEngine={updateEngine}/>
 
         <S.Layer
           onDrop={(event) => {

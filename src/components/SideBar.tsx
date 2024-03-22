@@ -1,42 +1,24 @@
 import { Badge, Button, Label, Sidebar, TextInput } from 'flowbite-react';
-import { BiBuoy } from 'react-icons/bi';
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
+import { HiViewBoards } from 'react-icons/hi';
 import { Accordion } from 'flowbite-react';
 import siteLogo from "../images/logo.png"
-function SideBar() {
+import { DiagramEngine } from '@projectstorm/react-diagrams';
+import CreateClient from './CreateClient';
+function SideBar({ diagramEngine, updateEngine }: { diagramEngine: DiagramEngine, updateEngine: () => void }) {
     return (
         <Sidebar className='dark' aria-label="Sidebar with content separator example" >
             <Sidebar.Logo href="#" img={siteLogo} className='[&>img]:h-16' imgAlt="Flowbite logo">
                 Network Graph
             </Sidebar.Logo>
             <Sidebar.Items>
+
                 <Sidebar.ItemGroup>
                     <Accordion collapseAll className='border-none h-full'>
 
                         <Accordion.Panel>
                             <Accordion.Title><div className='flex-row flex gap-4 items-center'><HiViewBoards />Client</div></Accordion.Title>
                             <Accordion.Content>
-                                <div className="max-w-md flex flex-col gap-2">
-                                    <div>
-                                        <div className="mb-2 block">
-                                            <Label htmlFor="iot-ip" value="IP address" />
-                                        </div>
-                                        <TextInput id="iot-ip" type="text" placeholder="127.0.0.1" required />
-                                    </div>
-                                    <div>
-                                        <div className="mb-2 block">
-                                            <Label htmlFor="iot-ip" value="IP address" />
-                                        </div>
-                                        <TextInput id="iot-ip" type="text" placeholder="127.0.0.1" required />
-                                    </div>
-                                    <div>
-                                        <div className="mb-2 block">
-                                            <Label htmlFor="iot-ip" value="IP address" />
-                                        </div>
-                                        <TextInput id="iot-ip" type="text" placeholder="127.0.0.1" required />
-                                    </div>
-                                </div>
-                                <Button color="dark" className='mt-5'>Dark</Button>
+                                <CreateClient diagramEngine={diagramEngine} updateEngine={updateEngine}/>
                             </Accordion.Content>
                         </Accordion.Panel>
 
