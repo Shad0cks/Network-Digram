@@ -27,11 +27,12 @@ export class TrayItemWidget extends React.Component<TrayItemWidgetProps> {
 				color={this.props.color}
 				draggable={true}
 				onDragStart={(event) => {
+					console.log(event)
 					event.dataTransfer.setData('storm-diagram-node', JSON.stringify(this.props.model));
 				}}
 				className="tray-item"
 			>
-				{this.props.name}pppp
+				{this.props.name}
 			</S.Tray>
 		);
 	}

@@ -1,19 +1,23 @@
 import styled from "@emotion/styled";
 import { keys } from "lodash";
+import './index.css';
 
 import { DefaultNodeModel } from "@projectstorm/react-diagrams";
-
 import { CanvasWidget } from "@projectstorm/react-canvas-core";
 import { DemoCanvasWidget } from "./components/DemoCanvasWidget";
 import { TrayItemWidget } from "./components/TrayItemWidget";
 import useGraphEngine from "./hooks/EngineHook";
+import { Sidebar } from "flowbite-react";
+import SideBar from "./components/SideBar";
 
 namespace S {
   export const Body = styled.div`
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
   `;
 
   export const Header = styled.div`
@@ -49,12 +53,10 @@ function App() {
   const { activeModel, diagramEngine, updateEngine } = useGraphEngine();
 
   return diagramEngine && activeModel ? (
+
     <S.Body>
-      <S.Header>
-        <div className="title">Storm React Diagrams - DnD demo</div>
-      </S.Header>
       <S.Content>
-        <S.Tray>
+        {/* <S.Tray>
           <TrayItemWidget
             model={{ type: "in" }}
             name="In Node"
@@ -65,12 +67,15 @@ function App() {
             name="Out Node"
             color="rgb(0,192,255)"
           />
-        </S.Tray>
+        </S.Tray> */}
+        <SideBar />
+
         <S.Layer
           onDrop={(event) => {
             var data = JSON.parse(
               event.dataTransfer.getData("storm-diagram-node")
             );
+            console.log(data)
             var nodesCount = keys(diagramEngine.getModel().getNodes()).length;
 
             var node: DefaultNodeModel | null = null;
