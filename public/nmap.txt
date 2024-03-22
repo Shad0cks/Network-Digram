@@ -1,0 +1,474 @@
+Starting Nmap 7.94 ( https://nmap.org ) at 2024-03-22 14:49 Eastern Daylight Time
+Nmap scan report for 10.18.200.17
+Host is up (0.0070s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: AA:12:6E:9A:1F:5B (Unknown)
+
+Nmap scan report for 10.18.200.26
+Host is up (0.014s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  open     http
+443/tcp filtered https
+MAC Address: 24:41:8C:64:D0:7F (Intel Corporate)
+
+Nmap scan report for 10.18.200.30
+Host is up (0.0080s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 2A:AC:55:98:59:19 (Unknown)
+
+Nmap scan report for 10.18.200.31
+Host is up (0.024s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 4E:CF:BF:D4:57:28 (Unknown)
+
+Nmap scan report for 10.18.200.32
+Host is up (0.0100s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 2A:69:FE:7E:ED:F9 (Unknown)
+
+Nmap scan report for 10.18.200.39
+Host is up (0.087s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 1A:FE:A4:2A:FA:7E (Unknown)
+
+Nmap scan report for 10.18.200.54
+Host is up (0.0060s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: E6:60:FB:96:C6:38 (Unknown)
+
+Nmap scan report for 10.18.200.67
+Host is up (0.0060s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 32:FB:8A:37:85:24 (Unknown)
+
+Nmap scan report for 10.18.200.68
+Host is up (0.056s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  open   ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 3C:22:FB:EB:A8:5F (Apple)
+
+Nmap scan report for 10.18.200.70
+Host is up (0.0040s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 92:62:93:07:63:C5 (Unknown)
+
+Nmap scan report for 10.18.200.72
+Host is up (0.012s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  open   ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 14:7D:DA:CC:9D:A7 (Apple)
+
+Nmap scan report for 10.18.200.94
+Host is up (0.0040s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 40:1A:58:B8:F7:B1 (Wistron Neweb)
+
+Nmap scan report for 10.18.200.95
+Host is up (0.0093s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: F4:D4:88:80:7C:AE (Apple)
+
+Nmap scan report for 10.18.200.99
+Host is up (0.021s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 46:78:8C:59:CA:2B (Unknown)
+
+Nmap scan report for 10.18.200.101
+Host is up (0.17s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: C6:32:CD:02:CD:9A (Unknown)
+
+Nmap scan report for 10.18.200.103
+Host is up (0.027s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  closed   ssh
+23/tcp  filtered telnet
+80/tcp  closed   http
+443/tcp closed   https
+MAC Address: 1C:BF:C0:64:0A:75 (Chongqing Fugui Electronics)
+
+Nmap scan report for 10.18.200.108
+Host is up (0.015s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 12:89:11:68:E5:29 (Unknown)
+
+Nmap scan report for 10.18.200.110
+Host is up (0.014s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 9E:17:7E:D6:79:06 (Unknown)
+
+Nmap scan report for 10.18.200.121
+Host is up (0.013s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: BE:81:8A:FA:B3:A0 (Unknown)
+
+Nmap scan report for 10.18.200.126
+Host is up (0.024s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 56:56:D5:E9:B3:20 (Unknown)
+
+Nmap scan report for 10.18.200.143
+Host is up (0.012s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 74:8F:3C:C6:4D:26 (Apple)
+
+Nmap scan report for 10.18.200.144
+Host is up (0.014s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp open     https
+MAC Address: 74:97:79:BD:C7:2F (Cloud Network Technology Singapore PTE.)
+
+Nmap scan report for 10.18.200.148
+Host is up (0.0090s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: F6:DD:DE:29:D4:46 (Unknown)
+
+Nmap scan report for 10.18.200.149
+Host is up (0.015s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 2A:42:C3:2D:1D:8F (Unknown)
+
+Nmap scan report for 10.18.200.154
+Host is up (0.0040s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: A8:8F:D9:3E:BF:EE (Apple)
+
+Nmap scan report for 10.18.200.157
+Host is up (0.023s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  open   ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 3C:22:FB:E3:79:3E (Apple)
+
+Nmap scan report for 10.18.200.160
+Host is up (0.091s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 7C:38:AD:61:18:45 (Samsung Electronics)
+
+Nmap scan report for 10.18.200.161
+Host is up (0.025s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 3E:C0:3D:B7:F5:2E (Unknown)
+
+Nmap scan report for 10.18.200.164
+Host is up (0.18s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 26:28:CB:BE:25:33 (Unknown)
+
+Nmap scan report for 10.18.200.174
+Host is up (0.014s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: BA:8C:7C:33:63:ED (Unknown)
+
+Nmap scan report for 10.18.200.191
+Host is up (0.12s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: E4:34:93:B6:1B:73 (Huawei Technologies)
+
+Nmap scan report for 10.18.200.201
+Host is up (0.038s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 3A:6E:DA:E6:E1:D3 (Unknown)
+
+Nmap scan report for 10.18.200.206
+Host is up (0.012s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 4A:2F:88:D1:F1:9D (Unknown)
+
+Nmap scan report for 10.18.200.207
+Host is up (0.011s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 22:9E:D9:D2:2A:9F (Unknown)
+
+Nmap scan report for 10.18.200.222
+Host is up (0.0080s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 02:62:33:2F:A0:B6 (Unknown)
+
+Nmap scan report for 10.18.200.223
+Host is up (0.0070s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 7E:29:6E:61:67:05 (Unknown)
+
+Nmap scan report for 10.18.200.230
+Host is up (0.023s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 9E:4D:8B:37:F4:2E (Unknown)
+
+Nmap scan report for 10.18.200.238
+Host is up (0.012s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: BC:D0:74:03:3A:4D (Apple)
+
+Nmap scan report for 10.18.200.240
+Host is up (0.026s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: E2:73:60:E3:72:E2 (Unknown)
+
+Nmap scan report for 10.18.200.245
+Host is up (0.14s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: E4:FD:A1:DE:C1:F7 (Huawei Technologies)
+
+Nmap scan report for 10.18.200.250
+Host is up (0.0090s latency).
+
+PORT    STATE    SERVICE
+21/tcp  filtered ftp
+22/tcp  filtered ssh
+23/tcp  filtered telnet
+80/tcp  filtered http
+443/tcp filtered https
+MAC Address: 74:A6:CD:E2:93:46 (Unknown)
+
+Nmap scan report for 10.18.200.251
+Host is up (0.026s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+MAC Address: 4A:29:F1:1E:F1:F1 (Unknown)
+
+Nmap scan report for 10.18.200.249
+Host is up (0.0023s latency).
+
+PORT    STATE  SERVICE
+21/tcp  closed ftp
+22/tcp  closed ssh
+23/tcp  closed telnet
+80/tcp  closed http
+443/tcp closed https
+
+Nmap done: 256 IP addresses (43 hosts up) scanned in 4.73 seconds

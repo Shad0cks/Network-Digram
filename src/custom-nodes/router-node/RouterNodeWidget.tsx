@@ -78,9 +78,9 @@ namespace S {
 const RouterNodeWidget = (props: RouterNodeWidgetProps) => {
     // Votre logique ici
     return (
-        <S.Node>
+        <S.Node style={{ borderColor: props.node.isSelected() ? '#69107E' : 'black' }}>
             <S.Title>
-                <S.TitleName>{props.node.iot_addr}</S.TitleName>
+                <S.TitleName>{props.node.iot_addr} {props.node.iot_mask}</S.TitleName>
             </S.Title>
 
             <S.Content>

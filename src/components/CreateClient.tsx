@@ -1,4 +1,4 @@
-import { Button, Label, Sidebar, TextInput } from 'flowbite-react';
+import { Button, Label, TextInput } from 'flowbite-react';
 
 import { DiagramEngine, PortModelAlignment } from '@projectstorm/react-diagrams';
 import { useState } from 'react';

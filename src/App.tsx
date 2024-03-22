@@ -5,9 +5,7 @@ import './index.css';
 import { DefaultNodeModel } from "@projectstorm/react-diagrams";
 import { CanvasWidget } from "@projectstorm/react-canvas-core";
 import { DemoCanvasWidget } from "./components/DemoCanvasWidget";
-import { TrayItemWidget } from "./components/TrayItemWidget";
 import useGraphEngine from "./hooks/EngineHook";
-import { Sidebar } from "flowbite-react";
 import SideBar from "./components/SideBar";
 
 namespace S {

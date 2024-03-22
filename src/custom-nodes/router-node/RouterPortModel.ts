@@ -1,4 +1,4 @@
-import { LinkModel, PortModel, DefaultLinkModel, PortModelAlignment, DefaultPortModel } from '@projectstorm/react-diagrams';
+import { LinkModel, PortModel, DefaultLinkModel, PortModelAlignment, DefaultPortModel, RightAngleLinkModel, PathFindingLinkModel, RightAngleLinkFactory, RightAngleLinkWidget } from '@projectstorm/react-diagrams';
 
 export class RouterPortModel extends DefaultPortModel {
 	constructor(name: string, alignment: PortModelAlignment, isIn: boolean) {
@@ -11,6 +11,6 @@ export class RouterPortModel extends DefaultPortModel {
 	}
 
 	createLinkModel(): LinkModel {
-		return new DefaultLinkModel();
+		return new RightAngleLinkModel();
 	}
 }

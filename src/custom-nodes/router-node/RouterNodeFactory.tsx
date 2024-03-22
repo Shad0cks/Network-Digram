@@ -4,8 +4,8 @@ import { DiagramEngine } from '@projectstorm/react-diagrams-core';
 import { RouterNodeModel } from './RouterNodeModel';
 import RouterNodeWidget from './RouterNodeWidget';
 
-export class  RouterNodeFactory extends AbstractReactFactory< RouterNodeModel, DiagramEngine> {
-	
+export class RouterNodeFactory extends AbstractReactFactory<RouterNodeModel, DiagramEngine> {
+
 	constructor() {
 		super('router');
 	}
@@ -15,6 +15,6 @@ export class  RouterNodeFactory extends AbstractReactFactory< RouterNodeModel, D
 	}
 
 	generateModel(event: any) {
-		return new  RouterNodeModel("", "", "");
+		return new RouterNodeModel("", "", "", "");
 	}
 }
