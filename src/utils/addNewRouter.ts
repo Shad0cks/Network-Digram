@@ -30,8 +30,10 @@ export function LinkRouterForSubnet(newRouterNode: RouterNodeModel, engine: Diag
     }
     // check if newRouter is a subnet of existing network
     AllRouters.map((router) => {
-        if (Object.keys(router.getPort("in")!.getLinks()).length >= 1)
-            return
+        // if (Object.keys(router.getPort("in")!.getLinks()).length >= 1)
+        //     return
+        let smallestNetwork: string | null = null
+        let tmpRouterPort: null | DefaultPortModel = null
 
         if (isSubnet(router.iot_addr + router.iot_mask, newRouterNode.iot_addr + newRouterNode.iot_mask)) {
             // newRouter is subnet of existing router
@@ -53,6 +55,7 @@ export function LinkRouterForSubnet(newRouterNode: RouterNodeModel, engine: Diag
                         }
                     }
                 })
+                console.log("create link with", exitingRouterPort)
                 const Routerlink = exitingRouterPort.link(newRouterPort)
                 model.addLink(Routerlink);
             }

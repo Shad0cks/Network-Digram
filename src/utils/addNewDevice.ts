@@ -1,7 +1,7 @@
 import { DefaultPortModel, DiagramEngine, NodeModel, NodeModelGenerics, PortModelAlignment } from "@projectstorm/react-diagrams";
 import { DeviceNodeModel } from "../custom-nodes/device-node/DeviceNodeModel";
 import { DevicePortModel } from "../custom-nodes/device-node/DevicePortModel";
-import { ValidateIPaddress, getRouterNodes, isSubnet } from "./checkOnNetwork";
+import { ValidateIPaddress, getRouterNodes, getSmallestNetworkNodeForDeviceIp, isSubnet } from "./checkOnNetwork";
 import { RouterNodeModel } from "../custom-nodes/router-node/RouterNodeModel";
 import ipRangeCheck from "ip-range-check"
 function checkNoDuplicatedDeviceIpInDiagram(allIot: NodeModel<NodeModelGenerics>[], wantedIp: string) {
@@ -52,23 +52,13 @@ export function LinkDerviceToExistingNetwork(deviceNode: DeviceNodeModel, engine
 
     Object.keys(deviceNode.getPorts()).map((ip, k) => {
 
-        let smallestNetwork: string | null = null
-        let tmpRouterPort: null | DefaultPortModel = null
+        let smallestNetworkNode = getSmallestNetworkNodeForDeviceIp(ip, routerNodeList)
 
-        routerNodeList.map((routerNode, i) => {
-            if (ipRangeCheck(ip, routerNode.iot_addr + routerNode.iot_mask)) {
-                if (smallestNetwork == null || isSubnet(smallestNetwork, routerNode.iot_addr + routerNode.iot_mask)) {
-                    tmpRouterPort = routerNode.getPort("out") as DefaultPortModel
-                    smallestNetwork = routerNode.iot_addr + routerNode.iot_mask
-                }
-            }
-        })
-
-
-        if (smallestNetwork !== null) {
+        if (smallestNetworkNode !== null) {
             const devicePort = deviceNode.getPort(ip) as DefaultPortModel
-            if (devicePort && tmpRouterPort) {
-                let link = devicePort.link(tmpRouterPort);
+            const RouterPort = smallestNetworkNode.getPort("out")
+            if (devicePort && RouterPort) {
+                let link = devicePort.link(RouterPort);
                 model.addLink(link)
                 // posNode.push(node)
             } else {
