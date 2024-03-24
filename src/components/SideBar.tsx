@@ -5,7 +5,6 @@ import siteLogo from "../images/logo.png"
 import { DiagramEngine } from '@projectstorm/react-diagrams';
 import CreateClient from './CreateClient';
 import CreateRouter from './CreateRouter';
-import CreateSubnet from './CreateSubnet';
 import { useState } from 'react';
 import NmapImportModal from './NmapImportModal';
 function SideBar({ diagramEngine, updateEngine }: { diagramEngine: DiagramEngine, updateEngine: () => void }) {
@@ -25,13 +24,6 @@ function SideBar({ diagramEngine, updateEngine }: { diagramEngine: DiagramEngine
                             <Accordion.Title><div className='flex-row flex gap-4 items-center'><HiViewBoards />Client</div></Accordion.Title>
                             <Accordion.Content>
                                 <CreateClient diagramEngine={diagramEngine} updateEngine={updateEngine} />
-                            </Accordion.Content>
-                        </Accordion.Panel>
-
-                        <Accordion.Panel>
-                            <Accordion.Title><div className='flex-row flex gap-4 items-center'><HiViewBoards />Subnet</div></Accordion.Title>
-                            <Accordion.Content>
-                                <CreateSubnet diagramEngine={diagramEngine} updateEngine={updateEngine} />
                             </Accordion.Content>
                         </Accordion.Panel>
 

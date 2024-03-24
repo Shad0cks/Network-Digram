@@ -94,6 +94,8 @@ function NmapImportModal({ show, setOpenModal, diagramEngine, updateEngine }: { 
             const node = new DeviceNodeModel(
                 device.hostname, pcLogo, iot_ports
             );
+
+            node.addPort(new DevicePortModel(ip, PortModelAlignment.LEFT, true))
             
             node.setPosition((key * 110) % 1100, Math.floor((key / 10) + 1) * 300);
 

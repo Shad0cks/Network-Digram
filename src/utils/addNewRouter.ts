@@ -32,40 +32,38 @@ export function LinkRouterForSubnet(newRouterNode: RouterNodeModel, engine: Diag
     AllRouters.map((router) => {
         if (Object.keys(router.getPort("in")!.getLinks()).length >= 1)
             return
+
         if (isSubnet(router.iot_addr + router.iot_mask, newRouterNode.iot_addr + newRouterNode.iot_mask)) {
             // newRouter is subnet of existing router
             const exitingRouterPort = router.getPort("out") as DefaultPortModel
             const newRouterPort = newRouterNode.getPort("in") as DefaultPortModel
             const links = exitingRouterPort.getLinks();
-            console.log("ici trigger", exitingRouterPort, newRouterPort)
 
             if (newRouterPort && exitingRouterPort) {
 
                 Object.keys(links).map((linkId) => {
                     const link = links[linkId] as DefaultLinkModel
-                    model.removeLink(link)
-                    const targetLinkPort = link.getTargetPort()
-                    console.log(targetLinkPort)
+                    const targetLinkPort = link.getSourcePort()
                     // check if links of existing router part of 
-                    // if (targetLinkPort instanceof DevicePortModel) {
-                    //     if (ipRangeCheck(targetLinkPort.getName(), newRouterNode.iot_addr + newRouterNode.iot_mask)) {
-                    //         const newLink = targetLinkPort.link(newRouterPort)
-                    //         model.removeLink(link)
-                    //         model.addLink(newLink)
-                    //     }
-                    // }
+                    if (targetLinkPort instanceof DevicePortModel) {
+                        if (ipRangeCheck(targetLinkPort.getName(), newRouterNode.iot_addr + newRouterNode.iot_mask)) {
+                            // const newLink = targetLinkPort.link(newRouterPort)
+                            // model.addLink(newLink)
+                            model.removeLink(link)
+                        }
+                    }
                 })
                 const Routerlink = exitingRouterPort.link(newRouterPort)
                 model.addLink(Routerlink);
             }
         }
 
-        if (isSubnet(newRouterNode.iot_addr + newRouterNode.iot_mask, router.iot_addr + router.iot_mask)) {
+        else if (isSubnet(newRouterNode.iot_addr + newRouterNode.iot_mask, router.iot_addr + router.iot_mask)) {
             //existing router is subnet of newRouter 
-            const newRouterPort = newRouterNode.getPort("out")
             const exitingRouterPort = router.getPort("in") as DefaultPortModel
+            const newRouterPort = newRouterNode.getPort("out")
             if (newRouterPort && exitingRouterPort) {
-                const link = exitingRouterPort.link(exitingRouterPort)
+                const link = exitingRouterPort.link(newRouterPort)
                 model.addLink(link);
             }
         }

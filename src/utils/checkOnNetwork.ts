@@ -27,6 +27,15 @@ export function isSubnet(RouterIp: string, SubnetIp: string) {
     const maskLengthA = parseInt(maskA, 10);
     const maskLengthB = parseInt(maskB, 10);
 
-    // Check if subnetB has a longer mask than subnetA
-    return maskLengthA <= maskLengthB && ipA.startsWith(ipB);
+    // Convert IP addresses to binary strings
+    const ipABinary = ipToBinary(ipA);
+    const ipBBinary = ipToBinary(ipB);
+
+    // Check if subnetB has a longer mask than or equal to subnetA and if subnetA IP starts with subnetB IP
+    return maskLengthA <= maskLengthB && ipABinary.slice(0, maskLengthB) === ipBBinary.slice(0, maskLengthB);
+}
+
+// Function to convert IP address to binary string
+function ipToBinary(ip: string) {
+    return ip.split('.').map(part => parseInt(part).toString(2).padStart(8, '0')).join('');
 }

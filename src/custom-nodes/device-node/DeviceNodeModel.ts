@@ -18,6 +18,5 @@ export class DeviceNodeModel extends NodeModel<NodeModelGenerics & DeviceNodeMod
 		this.description = description;
 		this.iot_logo = iot_logo;
 		this.iot_ports = iot_ports;
-		this.addPort(new DevicePortModel("in", PortModelAlignment.TOP, true));
 	}
 }

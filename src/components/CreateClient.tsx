@@ -3,7 +3,7 @@ import { Button, Label, TextInput } from 'flowbite-react';
 import { DiagramEngine } from '@projectstorm/react-diagrams';
 import { useState } from 'react';
 import pcLogo from '../images/device-logo/pc.png'; // with import
-import { AddIpToDevice, CreateNewDevice, LinkDerviceToExistingNetwork } from '../utils/addNewDivice';
+import { AddIpToDevice, CreateNewDevice, LinkDerviceToExistingNetwork } from '../utils/addNewDevice';
 
 function CreateClient({ diagramEngine, updateEngine }: { diagramEngine: DiagramEngine, updateEngine: () => void }) {
 

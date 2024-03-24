@@ -88,12 +88,6 @@ const DeviceNodeWidget = (props: DeviceNodeWidgetProps) => {
     // Votre logique ici
     return (
         <S.Node style={{ borderColor: props.node.isSelected() ? '#69107E' : 'black' }}>
-            <PortWidget
-                port={props.node.getPort("in")!}
-                engine={props.engine}
-            >
-                <S.PortTop onClick={(e) => e.stopPropagation()} />
-            </PortWidget>
             <S.Title>
                 {
                     Object.keys(props.node.getPorts()).map((item, i) => item !== "in" ? (

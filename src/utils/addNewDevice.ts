@@ -51,12 +51,12 @@ export function LinkDerviceToExistingNetwork(deviceNode: DeviceNodeModel, engine
     const routerNodeList = getRouterNodes(engine);
 
     Object.keys(deviceNode.getPorts()).map((ip, k) => {
+
         let smallestNetwork: string | null = null
         let tmpRouterPort: null | DefaultPortModel = null
 
         routerNodeList.map((routerNode, i) => {
             if (ipRangeCheck(ip, routerNode.iot_addr + routerNode.iot_mask)) {
-
                 if (smallestNetwork == null || isSubnet(smallestNetwork, routerNode.iot_addr + routerNode.iot_mask)) {
                     tmpRouterPort = routerNode.getPort("out") as DefaultPortModel
                     smallestNetwork = routerNode.iot_addr + routerNode.iot_mask
