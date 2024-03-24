@@ -1,7 +1,7 @@
 import { NodeModel, NodeModelGenerics, PortModelAlignment } from '@projectstorm/react-diagrams';
 import { RouterPortModel } from './RouterPortModel';
 
-export interface  RouterNodeModelGenerics {
+export interface RouterNodeModelGenerics {
 	PORT: RouterPortModel;
 }
 
@@ -21,5 +21,7 @@ export class RouterNodeModel extends NodeModel<NodeModelGenerics & RouterNodeMod
 		this.iot_logo = iot_logo;
 		this.iot_mask = iot_mask;
 		this.addPort(new RouterPortModel("out", PortModelAlignment.BOTTOM, false))
+		this.addPort(new RouterPortModel("in", PortModelAlignment.TOP, true))
+
 	}
 }

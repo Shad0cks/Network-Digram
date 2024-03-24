@@ -3,7 +3,7 @@ import { DiagramEngine, NodeModel, NodeModelGenerics } from '@projectstorm/react
 import { useState } from 'react';
 import { RouterNodeModel } from '../custom-nodes/router-node/RouterNodeModel';
 import router from '../images/device-logo/router.png'; // with import
-import { isSameNetwork } from '../utils/checkOnNetwork';
+import { CreateNewRouter, LinkRouterForSubnet, LinkRouterToDevice } from '../utils/addNewRouter';
 
 function CreateRouter({ diagramEngine, updateEngine }: { diagramEngine: DiagramEngine, updateEngine: () => void }) {
 
@@ -32,27 +32,15 @@ function CreateRouter({ diagramEngine, updateEngine }: { diagramEngine: DiagramE
 
     const addRouter = () => {
 
-        const newNode = new RouterNodeModel(
-            ip, host, router, mask
-        );
-        const posNode: NodeModel<NodeModelGenerics>[] = []
+        const node = CreateNewRouter(ip, host, router, mask);
 
-        newNode.setPosition(400, 400);
-        const model = diagramEngine.getModel()
-        diagramEngine.getModel().getNodes().map((node: any, i) => {
-            if (isSameNetwork(ip, mask, node.iot_addr)) {
+        // const posNode: NodeModel<NodeModelGenerics>[] = []
 
-                const iotPort = node.getPort("in")
-                const routerPort = newNode.getPort("out")
-                if (iotPort && routerPort) {
-                    let link = iotPort.link(routerPort);
-                    model.addLink(link)
-                    posNode.push(node)
-                }
-            }
-        })
-        disposerCarresEnCercle(newNode, posNode)
-        diagramEngine.getModel().addNode(newNode);
+        LinkRouterForSubnet(node, diagramEngine)
+        LinkRouterToDevice(node, diagramEngine)
+
+        // disposerCarresEnCercle(newNode, posNode)
+        diagramEngine.getModel().addNode(node);
         updateEngine();
 
         setHost("")

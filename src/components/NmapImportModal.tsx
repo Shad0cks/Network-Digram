@@ -82,18 +82,20 @@ function NmapImportModal({ show, setOpenModal, diagramEngine, updateEngine }: { 
 
         Object.keys(result).map((ip, key) => {
             const device = result[ip];
-            const node = new DeviceNodeModel(
-                ip, device.hostname, pcLogo
-            );
-
-            node.setPosition((key * 110) % 1100, Math.floor((key / 10) + 1) * 300);
+            const iot_ports: string[] = []
 
             Object.keys(device.services).map((port) => {
                 if (device.services[port].state === "open")
-                    node.addPort(new DevicePortModel(port + " / " + device.services[port].protocol, PortModelAlignment.LEFT, true))
+                    iot_ports.push(port + " / " + device.services[port].protocol)
                 else if (device.services[port].state === "filtered")
-                    node.addPort(new DevicePortModel(port + " / " + device.services[port].protocol + " filtered", PortModelAlignment.LEFT, true))
+                    iot_ports.push(port + " / " + device.services[port].protocol + " filtered")
             })
+
+            const node = new DeviceNodeModel(
+                device.hostname, pcLogo, iot_ports
+            );
+            
+            node.setPosition((key * 110) % 1100, Math.floor((key / 10) + 1) * 300);
 
             diagramEngine.getModel().addNode(node);
         })

@@ -1,10 +1,10 @@
-import  DeviceNodeWidget  from './DeviceNodeWidget';
+import DeviceNodeWidget from './DeviceNodeWidget';
 import { DeviceNodeModel } from './DeviceNodeModel';
 import { AbstractReactFactory } from '@projectstorm/react-canvas-core';
 import { DiagramEngine } from '@projectstorm/react-diagrams-core';
 
 export class DeviceNodeFactory extends AbstractReactFactory<DeviceNodeModel, DiagramEngine> {
-	
+
 	constructor() {
 		super('device');
 	}
@@ -14,6 +14,6 @@ export class DeviceNodeFactory extends AbstractReactFactory<DeviceNodeModel, Dia
 	}
 
 	generateModel(event: any) {
-		return new DeviceNodeModel("", "", "");
+		return new DeviceNodeModel("", "", []);
 	}
 }

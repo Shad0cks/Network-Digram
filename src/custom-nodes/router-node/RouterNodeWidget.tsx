@@ -65,6 +65,19 @@ namespace S {
         margin: 3px 0 7px 0;
     `
 
+    export const PortTop = styled.div`
+		width: 10px;
+		height: 10px;
+		z-index: 10;
+		background-color: #C63C1E;
+		cursor: pointer;
+        clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        top: -10px;
+	`;
+
     export const Description = styled.p`
     word-break: break-word;
     white-space: pre-wrap;
@@ -79,7 +92,14 @@ const RouterNodeWidget = (props: RouterNodeWidgetProps) => {
     // Votre logique ici
     return (
         <S.Node style={{ borderColor: props.node.isSelected() ? '#69107E' : 'black' }}>
+            <PortWidget
+                    port={props.node.getPort("in")!}
+                    engine={props.engine}
+                >
+                    <S.PortTop onClick={(e) => e.stopPropagation()} />
+                </PortWidget>
             <S.Title>
+                
                 <S.TitleName>{props.node.iot_addr} {props.node.iot_mask}</S.TitleName>
             </S.Title>
 

@@ -1,31 +1,30 @@
 import { Button, Label, TextInput } from 'flowbite-react';
 
-import { DiagramEngine, PortModelAlignment } from '@projectstorm/react-diagrams';
+import { DiagramEngine } from '@projectstorm/react-diagrams';
 import { useState } from 'react';
-import { DeviceNodeModel } from '../custom-nodes/device-node/DeviceNodeModel';
 import pcLogo from '../images/device-logo/pc.png'; // with import
-import { DevicePortModel } from '../custom-nodes/device-node/DevicePortModel';
+import { AddIpToDevice, CreateNewDevice, LinkDerviceToExistingNetwork } from '../utils/addNewDivice';
 
 function CreateClient({ diagramEngine, updateEngine }: { diagramEngine: DiagramEngine, updateEngine: () => void }) {
 
-    const [ip, setIp] = useState<string>("")
+    const [ips, setIp] = useState<string>("")
     const [ports, setPorts] = useState<string>("")
     const [host, setHost] = useState<string>("")
 
     const addCLient = () => {
 
-        const node = new DeviceNodeModel(
-            ip, host, pcLogo
-        );
+        const node = CreateNewDevice(host, pcLogo, ports.split(";"))
 
-        node.setPosition(0, 0);
+        if (AddIpToDevice(node, ips.split(";"), diagramEngine) === null) {
+            console.log("Error: Duplicated Ip");
+        }
+        else {
+            LinkDerviceToExistingNetwork(node, diagramEngine);
 
-        ports.split(";").forEach((port) => {
-            node.addPort(new DevicePortModel(port, PortModelAlignment.LEFT, true))
-        })
+            diagramEngine.getModel().addNode(node);
+            updateEngine();
+        }
 
-        diagramEngine.getModel().addNode(node);
-        updateEngine();
 
         setHost("")
         setIp("")
@@ -42,7 +41,7 @@ function CreateClient({ diagramEngine, updateEngine }: { diagramEngine: DiagramE
                     <div className="mb-2 block">
                         <Label htmlFor="iot-ip" value="IP address" />
                     </div>
-                    <TextInput id="iot-ip" type="text" placeholder="127.0.0.1" value={ip} onChange={(e) => setIp(e.target.value)} />
+                    <TextInput id="iot-ip" type="text" placeholder="127.0.0.1" value={ips} onChange={(e) => setIp(e.target.value)} />
                 </div>
                 <div>
                     <div className="mb-2 block">
